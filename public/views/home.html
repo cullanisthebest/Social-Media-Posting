@@ -1,0 +1,80 @@
+<body>
+   <div class="container">
+      <div class="row">
+         <div class="intro center col-md-6 col-md-offset-3">
+            <div class="page-header">
+               <h1>Social Media Application</h1>
+            </div>
+            <br/>
+            <h4>Welcome {{user}}!</h4>
+            <h5>Email: {{email}}</h5>
+
+            <!-- <a href="http://localhost:1330/access-token">Sign in with Twitter</a> -->
+            <!-- <a href="" ng-click="twitterLogin()">Twitter Me Up!!</a> -->
+            <!-- <button ng-click="FBLogin()">Facebook Login</button> -->
+            
+<!--             <h4>Sign in below<h4>
+               <br/>
+               <a href=""><img ng-click="FBLogin()" src="http://www.hya.co.nz/wp-content/uploads/2015/05/facebook.png"/></a>
+               <a href="http://localhost:1330/request-token"><img src="http://www.uoguelph.ca/research/images/icon_twitter.png"></a> -->
+
+               <form ng-submit="addPost()" style="margin-top:30px;">
+
+                  <div class="card light-blue lighten-4">
+                     <div class="card-content">
+                        <span class="card-title black-text">Click to Sign in Below</span>
+                     </div> 
+                     <div class="card-action">
+<!--                         <p>
+                           <input type="checkbox" id="Facebook" />
+                           <label for="Facebook">Facebook</label>
+                        </p>
+                        <p>
+                           <input type="checkbox" id="Instagram" />
+                           <label for="Instagram">Instagram</label>
+                        </p>
+                        <p>
+                           <input type="checkbox" id="Twitter" />
+                           <label for="Twitter">Twitter</label>
+                        </p> -->
+                        <a href=""><img ng-click="FBLogin()" src="http://www.hya.co.nz/wp-content/uploads/2015/05/facebook.png"/></a>
+                        <!-- <a href="http://localhost:1330/request-token"><img src="http://www.uoguelph.ca/research/images/icon_twitter.png"></a> -->
+                     </div>
+                  </div>
+                  <h3>Add a new post</h3>
+                  <div class="form-group">
+                     <input type="text" class="form-control" placeholder="Content" ng-model="postContent"></input><br/>
+                     <button type="submit" class="btn btn-primary">Post To Twitter</button>{{tweeted}}
+                  </div>
+               </form>
+               <button class="btn btn-primary" ng-click="FBClicker()">Post to Facebook</button>
+               <button class="btn btn-primary" ng-click="FBFeeds()">Get Facebook Feeds</button>
+               <br/><br/>
+
+               <div class="card teal accent-2">
+                  <div class="card-content">
+                     <span class="card-title black-text">Most Recent Facebook Posts</span>
+                  </div> 
+                  <div class="card-action">
+                     <div ng-bind-html="fbposts1"></div>
+                     <div ng-bind-html="fbposts2"></div>
+                     <div ng-bind-html="fbposts3"></div>
+                  </div>
+               </div>
+
+
+               <div class="card blue-grey darken-1">
+                  <div class="card-content white-text">
+                     <span class="card-title white-text">All Posts From This App</span>
+                  </div> 
+                  <div class="card-action white-text">
+                     <div data-ng-init="posts()">
+                        <div ng-bind-html="allposts"></div>
+                     </div>
+                     <button class="btn btn-primary btn-sm" ng-click="updateposts()">Update Posts</button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </body>
+

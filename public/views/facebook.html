@@ -1,0 +1,27 @@
+<!-- Everything in the body is part of the myApp
+			Angular application -->
+<body>
+<!--  Everything in this div has access to the scope variables
+	  in facebookCtrl (defined in datamodel.js)  -->
+	<div ng-controller="facebookCtrl" id="facebookCtrl">
+	
+		<!-- The Facebook login button. The scope attribute
+		identifies the permissions we want the user
+		to give us  -->
+		<fb:login-button scope="public_profile,email" onlogin="checkLoginState();" ng-if="userName == ''">
+			Login
+		</fb:login-button>
+		<div ng-if="userName != ''">
+			Hello {{userName}}
+		</div>
+
+		<h3>Status</h3>
+		
+		<!-- When inside an Angular scope, such as facebookCtrl,
+		code encased in {{ }} is evaluated as JavaScript with
+		access to the scope variable ($scope). In this case,
+		it returns the value of $scope.fbStatus, which is
+		determined by setFacebookStatus().  -->
+		{{fbStatus}}
+	</div>
+</body>
